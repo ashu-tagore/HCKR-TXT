@@ -3,109 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Menu</title>
+    <title>Navigation Menu</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Ion Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Including SplitType library for animated text splitting -->
+    <script src="https://unpkg.com/split-type"></script>
 </head>
 <body>
-
+    <!-- Creating top navigation bar with logo and menu button -->
     <nav>
-        <div class="menu-toggle">
-            <p>Menu</p>
-            <p>Collection</p>
-        </div>
+        <div class="logo">Logo</div>
+        <div class="menu-toggle">Menu</div>
     </nav>
 
+    <!-- Wrapping page contents -->
     <div class="container">
         <div class="menu-container">
             <div class="menu">
+                <!-- Structuring the primary menu section -->
                 <div class="menu-main">
                     <div class="menu-top">
+                        <!-- Showing the navigation title -->
                         <div class="menu-top-title">
-                            <p>Discover</p>
+                            <div class="menu-title">
+                                <p>Navigation</p>
+                            </div>
                         </div>
+                        <!-- Listing all menu items -->
                         <div class="menu-top-content">
-                            <div class="menu-item" id="active">
-                                <div class="menu-item-link">
-                                    <div class="bg-hover"></div>
-                                    <a href="#">Story</a>
-                                </div>
-                                <span>Page 001</span>
-                            </div>
-
                             <div class="menu-item">
                                 <div class="menu-item-link">
                                     <div class="bg-hover"></div>
-                                    <a href="#">Protocol</a>
+                                    <a href="#">Home</a>
                                 </div>
-                                <span>Page 002</span>
+                                <span>01</span>
                             </div>
-
-                            <div class="menu-item">
-                                <div class="menu-item-link">
-                                    <div class="bg-hover"></div>
-                                    <a href="#">Journal</a>
-                                </div>
-                                <span>Page 003</span>
-                            </div>
-
-                            <div class="menu-item">
-                                <div class="menu-item-link">
-                                    <div class="bg-hover"></div>
-                                    <a href="#">Contact</a>
-                                </div>
-                                <span>Page 004</span>
-                            </div>
-
-                            <div class="menu-item">
-                                <div class="menu-item-link">
-                                    <div class="bg-hover"></div>
-                                    <a href="#">Gallery</a>
-                                </div>
-                                <span>Page 005</span>
-                            </div>
-
                             <div class="menu-item">
                                 <div class="menu-item-link">
                                     <div class="bg-hover"></div>
                                     <a href="#">About</a>
                                 </div>
-                                <span>Page 006</span>
+                                <span>02</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-link">
+                                    <div class="bg-hover"></div>
+                                    <a href="#">Services</a>
+                                </div>
+                                <span>03</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-link">
+                                    <div class="bg-hover"></div>
+                                    <a href="#">Contact</a>
+                                </div>
+                                <span>04</span>
                             </div>
                         </div>
                     </div>
-
+                    <!-- Placing the social media links at the bottom -->
                     <div class="menu-bottom">
                         <div class="menu-sub-item">
-                            <div class="menu-title"><p>Connect</p></div>
-                            <div class="menu-content"><p>Discord</p></div>
-                        </div>
-
-                        <div class="menu-sub-item">
-                            <div class="menu-title"><p>Connect</p></div>
-                            <div class="menu-content"><p>Discord</p></div>
-                        </div>
-
-                        <div class="menu-sub-item">
-                            <div class="menu-title"><p>Connect</p></div>
-                            <div class="menu-content"><p>Discord</p></div>
+                            <div class="menu-title">
+                                <p>Follow</p>
+                            </div>
+                            <div class="menu-content">
+                                <p>Instagram</p>
+                                <p>Twitter</p>
+                                <p>LinkedIn</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+                <!-- Setting up sidebar for close button -->
                 <div class="menu-sidebar">
                     <div class="close-btn">
-                        <ion-icon name="close-sharp"></ion-icon>
-                    </div>
-                    <div class="logo">
-                        <ion-icon name="funnel-sharp"></ion-icon>
+                        <div class="logo">×</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Loading the main script file -->
     <script src="script.js"></script>
 </body>
 </html>

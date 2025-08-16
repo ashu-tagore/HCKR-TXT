@@ -1,9 +1,11 @@
+/* Resetting default margins and paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Setting up body and html to cover view and apply font */
 html, body {
     width: 100vw;
     height: 100vh;
@@ -12,33 +14,37 @@ html, body {
     background: #fff;
 }
 
-a, p, span{
+/* Styling links, paragraphs, and spans */
+a, p, span {
     text-transform: uppercase;
     font-size: 10px;
     line-height: 100%;
     cursor: pointer;
 }
 
+/* Placing and styling the navigation bar */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    display : flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
     z-index: 2;
 }
 
+/* Occupying the entire window for main container */
 .container {
     width: 100%;
     height: 100%;
 }
 
+/* Positioning menu off-canvas initially and enabling animated slide-in */
 .menu-container {
     position: fixed;
     top: 50%;
-    left: 0%;
+    left: -50%;
     transform: translateY(-50%);
     padding: 1.5em;
     width: 45%;
@@ -50,7 +56,8 @@ nav {
     transition: left 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.menu{
+/* Styling main menu box, using dark background and rounded corners */
+.menu {
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -60,7 +67,8 @@ nav {
     display: flex;
 }
 
-.menu-main{
+/* Arranging the left menu vertically and splitting with border */
+.menu-main {
     flex: 5;
     display: flex;
     flex-direction: column;
@@ -68,36 +76,41 @@ nav {
     border-right: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.menu-sidebar{
+/* Placing the sidebar to the right */
+.menu-sidebar {
     flex: 0.2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Laying out the upper section of the menu */
 .menu-main .menu-top {
     display: flex;
     border-top: 1px solid rgba(255, 255, 255, 0.125);
 }
 
+/* Stacking lower section of menu */
 .menu-main .menu-bottom {
     display: flex;
     flex-direction: column;
-
 }
 
-.menu-top-title{
+/* Adding padding for navigation title */
+.menu-top-title {
     flex: 1;
     padding: 2em;
 }
 
-.menu-top-content{
+/* Stacking and spacing menu items vertically */
+.menu-top-content {
     padding: 1.25em 0;
     flex: 4;
     display: flex;
     flex-direction: column;
 }
 
+/* Animating the slide of menu items horizontally */
 .menu-item {
     position: relative;
     left: -100px;
@@ -105,9 +118,12 @@ nav {
     transition: left 0.3s;
 }
 
-.menu-item-link{
+/* Grouping link and hover background for each menu item */
+.menu-item-link {
     position: relative;
 }
+
+/* Styling each menu item link visibly */
 .menu-item-link a {
     position: relative;
     text-decoration: none;
@@ -120,15 +136,18 @@ nav {
     z-index: 2;
 }
 
-.menu-item#active .menu item-link a {
+/* Highlighting active menu item text */
+.menu-item#active .menu-item-link a {
     color: #000;
 }
 
-.menu-item:hover .menu item-link a {
+/* Changing link color when hovering */
+.menu-item:hover .menu-item-link a {
     color: #000;
 }
 
-.bg-hover{
+/* Creating hover background and initially hiding it */
+.bg-hover {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,62 +158,72 @@ nav {
     opacity: 0;
 }
 
-.menu-item:hover .bg-hover{
+/* Showing hover background on hover */
+.menu-item:hover .bg-hover {
     opacity: 1;
 }
 
-.menu-item#active .bg-hover{
+/* Indicating active item by changing background color */
+.menu-item#active .bg-hover {
     background-color: aquamarine;
     opacity: 1;
 }
 
-.menu-item span{
+/* Positioning and padding menu item number label */
+.menu-item span {
     position: absolute;
     top: 0px;
     padding: 1.5em 0;
 }
 
-.menu-item span .word .char{
+/* Coloring SplitType characters by default */
+.menu-item span .word .char {
     color: #000;
 }
 
-.menu-item#active span .word .char{
+/* Coloring SplitType characters white for active item */
+.menu-item#active span .word .char {
     color: #fff;
 }
 
-.menu-item:hover span .word .char .char-active{
+/* Switching color on hover/animation activation */
+.menu-item:hover span .word .char.char-active {
     color: #fff;
 }
-
-.menu-item span .word .char .char-active{
-        color: #000;
+.menu-item span .word .char.char-active {
+    color: #000;
 }
 
-.menu-sub-item{
+/* Structuring and adding a border for the social section */
+.menu-sub-item {
     width: 100%;
     display: flex;
-    gap : 1em;
+    gap: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.125);
     padding: 1em 2em;
 }
 
-.menu-title{
+/* Sizing and aligning the social title section */
+.menu-title {
     flex: 1;
 }
 
-.menu-content{
+/* Applying extra left padding for the social links */
+.menu-content {
     flex: 4;
     padding-left: 2em;
 }
 
-.menu-content p{
+/* Relatively positioning social links for after animation */
+.menu-content p {
     position: relative;
     width: max-content;
     padding: 0.125em;
 }
 
-.menu-content p::after{
-    content:"";
+/* Preparing underline animation for social links */
+.menu-content p::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -204,56 +233,58 @@ nav {
     mix-blend-mode: difference;
 }
 
+/* Animating underline when hovering on social link */
 @keyframes hoverEffect {
-    0%,100% {
+    0%, 100% {
         width: 0%;
         left: 0%;
     }
-
     50% {
         width: 100%;
         left: 0;
     }
-
-    51%{
+    51% {
         width: 100%;
         left: auto;
         right: 0;
     }
-
-    100%{
-        left:auto;
+    100% {
+        left: auto;
         right: 0;
         width: 0%;
     }
 }
-
 .menu-content p:hover::after {
-    animation : hoverEffect 1s ease forwards;
+    animation: hoverEffect 1s ease forwards;
 }
 
+/* Padding the close (×) button */
 .close-btn .logo {
     padding: 1.5em;
 }
 
+/* Adding border and pointer behavior to close button */
 .close-btn {
     border-bottom: 1px solid rgba(255, 255, 255, 0.125);
     cursor: pointer;
 }
 
+/* Disabling font kerning for SplitType-processed text */
+.target {
+    font-kerning: none;
+}
+
+/* Adjusting layout for smaller screens */
 @media (max-width: 900px) {
     .menu-container {
         width: 100%;
     }
-
     .menu-top-content {
         padding: 1.5em;
     }
-
-    .menu-top-title, .menu-item span, .menu-title  {
+    .menu-top-title, .menu-item span, .menu-title {
         display: none;
     }
-
     .menu-item:hover, .menu-item-link a {
         color: #fff;
     }
